@@ -3,28 +3,28 @@
         {
             "titulo": "Audifonos MGX",
             "imagen":"https://dust2.gg/wp-content/uploads/2022/09/fondo-copia-203-a0d01805-5946-458b-ba1b-7bd9fdd223f5.png",
-            "precio" : "$49,999" ,
+            "precio" : "18000." ,
             "descripcion":"Audifonos con Bluetooth duracion de bateria 30horas.",
             "stock":"3"
         },
         {
             "titulo": "Carta",
             "imagen":"https://assets.pokemon.com/assets/cms2-es-es/img/cards/web/SM3/SM3_ES_20.png",
-            "precio" : "$69,999" ,
+            "precio" : "6000." ,
             "descripcion":"Carta de pokemon",
             "stock":"5"
         },
         {
             "titulo": "TV",
             "imagen":"https://media.istockphoto.com/id/486895337/es/foto/televisi%C3%B3n-de-alta-definici%C3%B3n.jpg?s=612x612&w=0&k=20&c=5wDMDzegN16YwqbKGJ3QcHAGlaHi_3XC8GCPjKrFmrM=",
-            "precio" : "$130,000" ,
+            "precio" : "130000.",
             "descripcion":"Televisor Wireless",
             "stock":"8"
         },
         {
             "titulo":"Teclado RGB",
             "imagen": "https://fotosol.cl/cdn/shop/products/teclado-redragon-kumara-k552-negro-mecanico-rgb-espanol-pnk552-rgb-sp_5000x.jpg?v=1598387587",
-            "precio": "$59,999",
+            "precio": "25000.",
             "descripcion": "Durabilidad entre las teclas",
             "stock":"9"
         }
