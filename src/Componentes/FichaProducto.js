@@ -1,3 +1,4 @@
+import 'bootstrap/dist/css/bootstrap.css';
 import React from 'react';
 import { Button, CardImg, Container, Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
 import listadoCar from "../listaCarrito.json";
@@ -11,7 +12,8 @@ class FichaProducto extends React.Component{
         //para darle accion mediante el boton
         this.state = {
             Modal:false,
-            listadoCarrito
+            listadoCarrito,
+            stock:props.props.stock
         };
         //interconectar la informacion para poder utilizar las props(del argumento en el metodo toggle)
         this.toggle = this.toggle.bind(this);
@@ -34,6 +36,21 @@ class FichaProducto extends React.Component{
         this.setState(prevState =>({
             modal: !prevState.modal,
         }));
+        //validamos que el stock no quede en un numero negativo
+        if (this.state.stock!==0) {
+            //se agrega el producto al carrito y el stock le quita -1
+            this.setState(prevState=> ({
+                stock: prevState.stock -1
+            }))
+        }
+        else{
+            //si no quedan productos mostrara una alert de producto agotado
+            alert('Stock agotado!')
+
+        }
+        //de esta manera actuliza el badge usando el valor de length
+        const badge = document.getElementById("BadgeCarrito");
+        badge.innerText = listadoCarrito.length;
     }
     render(){
         return(
@@ -47,7 +64,7 @@ class FichaProducto extends React.Component{
             <p>El Detalle del producto seleccionado es el siguiente: </p>
             {this.props.props.descripcion}
             <p>Este producto tiene un valor de <b>{this.props.props.precio}</b> pesos.</p>
-            <p>Existen <b>{this.props.props.stock}</b> unidades de este productos disponibles.</p>
+            <p>Existen <b>{this.state.stock}</b> unidades de este productos disponibles.</p>
             </ModalBody>
             <ModalFooter className="modalFooter">
             <Button color="primary" onClick={this.agregarCarrito}>Agregar al carrito</Button>

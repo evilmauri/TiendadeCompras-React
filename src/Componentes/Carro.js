@@ -20,7 +20,34 @@ class Carro extends React.Component{
         //definir el estado del popover
         this.setState(prevState => ({
             popoverOpen: !prevState.popoverOpen
-        }));
+        }))
+    }
+    totalCarrito(){
+        let TotalPago =0;
+        this.state.listadoCarrito.map((listadoCarrito, i) => {
+            TotalPago += listadoCarrito.precio;
+            return TotalPago;
+        }
+        );
+        return TotalPago;
+
+
+        /*let total = 0;
+        
+        this.state.listadoCarrito.forEach((listadoCarrito) => {
+    total += parseInt(listadoCarrito.precio);
+});console.log(total);
+return total;*/
+
+
+        /*let total = 0;
+        // eslint-disable-next-line no-unused-vars
+        let suma= this.state.listadoCarrito.map(
+            (listadoCarrito) => (
+                total = (total += parseInt(listadoCarrito.precio))
+                )
+        )
+        return total;*/
     }
     render(){
         //nuestro mapeo quedria de est form solo utilizando titulo y precio
@@ -39,7 +66,7 @@ class Carro extends React.Component{
             <div>
                 <Button id="Popover1" color="info">
                 <span class="material-icons"> shopping_cart</span>
-                <Badge color="secondary">{arregloCarrito.length}</Badge>
+                <Badge color="secondary" id="BadgeCarrito">{arregloCarrito.length}</Badge>
                 </Button>
         <Popover placement="bottom" isOpen={this.state.popoverOpen} target="Popover1" toggle={this.toggle}>
         <PopoverHeader>Listado de Compras</PopoverHeader>
@@ -55,6 +82,13 @@ class Carro extends React.Component{
                 <tbody>
                     {arregloCarrito}
                 </tbody>
+                <tfoot>
+                    <td>
+                    <b>Total: </b>
+                    </td>
+                    <th>${Intl.NumberFormat('es-CL').format(this.totalCarrito())}</th>
+                    <td>Pesos.</td>
+                </tfoot>
             </Table>
             </PopoverBody>
         </Popover>
@@ -62,5 +96,5 @@ class Carro extends React.Component{
         );
     }
 }
-
+//{Intl.NumberFormat("de-DE").format(this.totalCarrito())}s
 export default Carro;
