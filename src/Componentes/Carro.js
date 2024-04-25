@@ -23,7 +23,7 @@ class Carro extends React.Component{
         }))
     }
     totalCarrito(){
-        TotalPago = 0;
+        let TotalPago =0;
         this.state.listadoCarrito.map((listadoCarrito, i) => {
             TotalPago += listadoCarrito.precio;
             return TotalPago;
