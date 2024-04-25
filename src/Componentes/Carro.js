@@ -23,13 +23,22 @@ class Carro extends React.Component{
         }))
     }
     totalCarrito(){
-        let TotalPago =0;
+        const totalCarrito = () => {
+            return this.state.carrito.reduce((acc, item) => acc + item.precio, 0);
+          };
+          
+          return (
+            <div>
+              Total: ${Intl.NumberFormat('es-CL').format(totalCarrito())}
+            </div>
+          );
+        /*let TotalPago =0;
         this.state.listadoCarrito.map((listadoCarrito, i) => {
             TotalPago += listadoCarrito.precio;
             return TotalPago;
         }
         );
-        return TotalPago;
+        return TotalPago;*/
 
 
         /*let total = 0;
@@ -74,7 +83,7 @@ return total;*/
             <Table>
                 <thead>
                 <tr>
-                    <th>#</th>
+                    <th>~</th>
                     <th>Producto</th>
                     <th>Precio</th>
                 </tr>
@@ -84,10 +93,8 @@ return total;*/
                 </tbody>
                 <tfoot>
                     <td>
-                    <b>Total: </b>
+                    <b>Total: {this.totalCarrito}</b>
                     </td>
-                    <th>${Intl.NumberFormat('es-CL').format(this.totalCarrito())}</th>
-                    <td>Pesos.</td>
                 </tfoot>
             </Table>
             </PopoverBody>
