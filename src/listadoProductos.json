@@ -2,7 +2,7 @@
 "listadoProductos":[
         {
             "titulo": "Audifonos MGX",
-            "imagen":"https://dust2.gg/wp-content/uploads/2022/09/fondo-copia-203-a0d01805-5946-458b-ba1b-7bd9fdd223f5.png",
+            "imagen":"https://www.google.com/aclk?sa=l&ai=DChcSEwj-oevlht6FAxVQVEgAHVFNDrIYABALGgJjZQ&ase=2&gclid=Cj0KCQjw_qexBhCoARIsAFgBlet5DZ4dxMITvnf28geg-7mnWjHJI9bema-28zXg8l-ISlEF84f8RLYaAjcBEALw_wcB&sig=AOD64_1R5lhdOwUbt6S0wT5SMewEMWoepg&ctype=5&nis=6&adurl&ved=2ahUKEwie9d_lht6FAxXGN7kGHQ2wD_kQvhd6BQgBEKgB",
             "precio" : "18000." ,
             "descripcion":"Audifonos con Bluetooth duracion de bateria 30horas.",
             "stock":"3"
